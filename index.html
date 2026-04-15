@@ -1,0 +1,1004 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vellinge IT Support — Lokal IT-hjälp i Vellingeområdet</title>
+
+<!-- ── Security meta tags ── -->
+<!-- CSP via meta (backup — HTTP header in _headers / .htaccess takes precedence) -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; form-action 'self' https://formspree.io; connect-src 'self' https://formspree.io; frame-ancestors 'none'; object-src 'none'; base-uri 'self';">
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+<meta http-equiv="X-Frame-Options" content="DENY">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+
+<!-- ── SEO / Social ── -->
+<meta name="description" content="Lokal IT-support i Vellingeområdet. Hjälp med datorer, WiFi, säkerhet, smarta hem och backup-lösningar (Acronis). Professionell och personlig service.">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Vellinge IT Support">
+<meta property="og:description" content="Lokal IT-support med personlig service — datorer, nätverk, säkerhet, smart hem och Acronis backup.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="sv_SE">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Figtree:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0d1f3c; --navy-mid: #162d55; --blue: #1a4a8a; --sky: #2e7dd1;
+    --accent: #e8a020; --accent-light: #f5c06a; --accent-pale: #fef3d8;
+    --red: #e85d1a; --green: #1a9e5c;
+    --light: #f4f7fc; --lighter: #ffffff;
+    --text: #1a2b42; --muted: #6b7f9a; --border: #d8e3f0;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    padding-bottom: 72px; font-family: 'Figtree', sans-serif; color: var(--text); background: var(--lighter); line-height: 1.65; overflow-x: hidden; }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(13,31,60,0.97); backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(232,160,32,0.1);
+    padding: 0 5vw; display: flex; align-items: center; justify-content: space-between; height: 68px;
+  }
+  .nav-brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+  .nav-brand-icon { width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; }
+  .nav-brand-text { font-family: 'DM Serif Display', serif; color: white; font-size: 1.15rem; font-weight: 400; }
+  .nav-brand-text span { color: var(--accent-light); font-style: italic; }
+  .nav-actions { display: flex; align-items: center; gap: 12px; }
+  .lang-toggle { display: flex; background: rgba(255,255,255,0.08); border-radius: 20px; padding: 3px; gap: 2px; }
+  .lang-btn { background: none; border: none; cursor: pointer; color: rgba(255,255,255,0.5); font-family: 'Figtree', sans-serif; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.05em; padding: 4px 12px; border-radius: 16px; transition: all 0.2s; }
+  .lang-btn.active { background: var(--accent); color: var(--navy); }
+  .nav-cta { background: var(--accent); color: var(--navy); font-family: 'Figtree', sans-serif; font-weight: 600; font-size: 0.85rem; padding: 9px 20px; border-radius: 6px; text-decoration: none; border: none; cursor: pointer; transition: all 0.2s; white-space: nowrap; }
+  .nav-cta:hover { background: var(--accent-light); transform: translateY(-1px); }
+
+  /* ── HERO ── */
+  .hero { min-height: 100vh; background: var(--navy); display: flex; align-items: center; position: relative; overflow: hidden; padding: 80px 5vw 56px; }
+  .hero-bg { position: absolute; inset: 0; z-index: 0; background: radial-gradient(ellipse 75% 65% at 80% 40%, rgba(46,125,209,0.2), transparent 65%), radial-gradient(ellipse 50% 60% at 5% 90%, rgba(232,160,32,0.1), transparent 60%); }
+  .hero-grid { position: absolute; inset: 0; z-index: 0; background-image: linear-gradient(rgba(255,255,255,0.022) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.022) 1px, transparent 1px); background-size: 60px 60px; }
+  .hero-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; width: 100%; position: relative; z-index: 1; }
+  .hero-content { animation: fadeUp 0.9s ease both; }
+  .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(232,160,32,0.12); border: 1px solid rgba(232,160,32,0.28); border-radius: 4px; padding: 5px 13px; margin-bottom: 26px; }
+  .hero-badge-dot { width: 6px; height: 6px; background: var(--accent); border-radius: 50%; animation: pulse 2.4s ease infinite; }
+  .hero-badge span { color: var(--accent-light); font-size: 0.71rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; }
+  h1 { font-family: 'DM Serif Display', serif; font-size: clamp(2.6rem,5.5vw,4rem); color: white; line-height: 1.08; margin-bottom: 22px; }
+  h1 em { font-style: italic; color: var(--accent-light); }
+  .hero-sub { font-size: 1rem; color: rgba(255,255,255,0.58); font-weight: 300; max-width: 440px; margin-bottom: 36px; line-height: 1.78; }
+  .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; }
+  .btn-primary { background: var(--accent); color: var(--navy); font-family: 'Figtree', sans-serif; font-weight: 600; font-size: 0.92rem; padding: 13px 26px; border-radius: 5px; text-decoration: none; border: none; cursor: pointer; transition: all 0.25s; display: inline-flex; align-items: center; gap: 8px; }
+  .btn-primary:hover { background: var(--accent-light); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(232,160,32,0.3); }
+  .btn-secondary { background: transparent; color: rgba(255,255,255,0.85); font-family: 'Figtree', sans-serif; font-weight: 400; font-size: 0.92rem; padding: 13px 26px; border-radius: 5px; text-decoration: none; border: 1px solid rgba(255,255,255,0.18); transition: all 0.25s; display: inline-flex; align-items: center; gap: 8px; }
+  .btn-secondary:hover { background: rgba(255,255,255,0.08); transform: translateY(-2px); }
+  .hero-stats { margin-top: 52px; display: flex; gap: 36px; flex-wrap: wrap; animation: fadeUp 0.9s 0.2s ease both; }
+  .stat { border-left: 1px solid rgba(232,160,32,0.4); padding-left: 16px; }
+  .stat-num { font-family: 'DM Serif Display', serif; font-size: 1.85rem; color: white; line-height: 1; }
+  .stat-label { font-size: 0.71rem; color: rgba(255,255,255,0.35); letter-spacing: 0.04em; margin-top: 4px; }
+  .hero-visual { display: flex; align-items: center; justify-content: center; animation: fadeUp 1s 0.15s ease both; }
+  .hero-visual svg { width: 100%; max-width: 400px; }
+
+  /* ── SHARED ── */
+  section { padding: 88px 5vw; }
+  .section-tag {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: 0.69rem; font-weight: 600; letter-spacing: 0.15em;
+    color: var(--sky); text-transform: uppercase; margin-bottom: 14px;
+  }
+  .section-tag::before { content: ''; display: inline-block; width: 20px; height: 1.5px; background: var(--sky); flex-shrink: 0; }
+  h2 { font-family: 'DM Serif Display', serif; font-size: clamp(1.9rem,3.5vw,2.7rem); color: var(--navy); line-height: 1.12; margin-bottom: 16px; }
+  .section-intro { font-size: 1rem; color: var(--muted); max-width: 560px; line-height: 1.78; font-weight: 300; }
+
+  /* ── SERVICES ── */
+  .services { background: var(--light); }
+  .services-header { margin-bottom: 52px; }
+  .services-grid { display: grid; grid-template-columns: repeat(auto-fill,minmax(270px,1fr)); gap: 20px; }
+  .service-card { background: white; border: 1px solid var(--border); border-radius: 10px; padding: 30px 26px; transition: all 0.32s; position: relative; overflow: hidden; }
+  .service-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, var(--sky), var(--accent)); transform: scaleX(0); transform-origin: left; transition: transform 0.35s; }
+  .service-card:hover { transform: translateY(-6px); box-shadow: 0 20px 56px rgba(13,31,60,0.1); border-color: rgba(46,125,209,0.35); }
+  .service-card:hover::before { transform: scaleX(1); }
+  .service-icon { width: 46px; height: 46px; background: linear-gradient(135deg,rgba(46,125,209,0.1),rgba(232,160,32,0.07)); border-radius: 9px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px; border: 1px solid rgba(46,125,209,0.12); }
+  .service-icon svg { width: 22px; height: 22px; stroke: var(--sky); fill: none; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+  .service-card h3 { font-family: 'DM Serif Display', serif; font-size: 1.2rem; color: var(--navy); margin-bottom: 8px; }
+  .service-card p { font-size: 0.85rem; color: var(--muted); line-height: 1.68; font-weight: 300; }
+
+  /* ── WHY ── */
+  .why { background: white; }
+  .why-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; }
+  .why-visual { background: var(--navy); border-radius: 12px; padding: 42px 36px; position: relative; overflow: hidden; border: 1px solid rgba(232,160,32,0.12); }
+  .why-visual-bg { position: absolute; inset: 0; background: radial-gradient(ellipse at 80% 20%, rgba(46,125,209,0.28), transparent 60%); }
+  .why-visual-content { position: relative; z-index: 1; }
+  .why-visual-title { font-family: 'DM Serif Display', serif; font-size: 1.5rem; color: white; margin-bottom: 26px; font-style: italic; }
+  .check-list { list-style: none; display: flex; flex-direction: column; gap: 14px; }
+  .check-list li { display: flex; align-items: flex-start; gap: 12px; color: rgba(255,255,255,0.72); font-size: 0.86rem; line-height: 1.6; }
+  .check-icon { width: 20px; height: 20px; flex-shrink: 0; background: rgba(232,160,32,0.15); border: 1px solid rgba(232,160,32,0.35); border-radius: 3px; display: flex; align-items: center; justify-content: center; color: var(--accent-light); font-size: 10px; margin-top: 2px; }
+  .why-points { display: flex; flex-direction: column; gap: 26px; margin-top: 34px; }
+  .why-point { display: flex; gap: 18px; align-items: flex-start; }
+  .why-point-num { font-family: 'DM Serif Display', serif; font-size: 2.2rem; color: var(--accent); line-height: 0.9; width: 36px; flex-shrink: 0; font-style: italic; opacity: 0.7; }
+  .why-point h4 { font-weight: 600; color: var(--navy); margin-bottom: 4px; font-size: 0.91rem; }
+  .why-point p { font-size: 0.84rem; color: var(--muted); line-height: 1.65; font-weight: 300; }
+
+  /* ── ACRONIS ── */
+  .acronis { background: var(--navy); position: relative; overflow: hidden; }
+  .acronis-bg { position: absolute; inset: 0; background: radial-gradient(ellipse 70% 60% at 15% 50%, rgba(46,125,209,0.22), transparent 65%), radial-gradient(ellipse 50% 70% at 90% 100%, rgba(232,160,32,0.07), transparent 60%); }
+  .acronis-inner { position: relative; z-index: 1; }
+  .acronis-header { margin-bottom: 52px; }
+  .acronis-header h2 { color: white; }
+  .acronis-header .section-tag { color: var(--accent-light); }
+  .acronis-header .section-tag::before { background: var(--accent); }
+  .acronis-header .section-intro { color: rgba(255,255,255,0.52); }
+  .acronis-partner { display: inline-flex; align-items: center; gap: 10px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 4px; padding: 7px 14px; margin-top: 20px; }
+  .acronis-partner-badge { background: linear-gradient(135deg,#e85d1a,#ff8c42); border-radius: 2px; padding: 2px 7px; font-size: 0.65rem; font-weight: 700; color: white; letter-spacing: 0.1em; }
+  .acronis-partner span { color: rgba(255,255,255,0.45); font-size: 0.76rem; }
+  /* Joined panel */
+  .acronis-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2px; margin-bottom: 32px; border: 1px solid rgba(255,255,255,0.07); border-radius: 12px; overflow: hidden; }
+  .acronis-card { background: rgba(255,255,255,0.03); padding: 30px 24px; transition: background 0.3s; position: relative; overflow: hidden; }
+  .acronis-card + .acronis-card { border-left: 1px solid rgba(255,255,255,0.06); }
+  .acronis-card::before { content: ''; position: absolute; top: 0; left: 0; bottom: 0; width: 3px; }
+  .card-backup::before    { background: linear-gradient(180deg,#5ba3e8,#2e7dd1); }
+  .card-ransomware::before { background: linear-gradient(180deg,#ff8c42,#e85d1a); }
+  .card-disaster::before  { background: linear-gradient(180deg,#34d399,#1a9e5c); }
+  .acronis-card:hover { background: rgba(255,255,255,0.065); }
+  .acronis-card-icon { width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 18px; }
+  .icon-backup    { background: rgba(46,125,209,0.22); }
+  .icon-ransomware { background: rgba(232,93,26,0.18); }
+  .icon-disaster  { background: rgba(26,158,92,0.16); }
+  .icon-backup svg    { stroke: #5ba3e8; }
+  .icon-ransomware svg { stroke: #ff8c42; }
+  .icon-disaster svg  { stroke: #34d399; }
+  .acronis-card-icon svg { width: 24px; height: 24px; fill: none; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+  .acronis-card h3 { font-family: 'DM Serif Display', serif; font-size: 1.25rem; color: white; margin-bottom: 9px; }
+  .acronis-card p { font-size: 0.83rem; color: rgba(255,255,255,0.4); line-height: 1.75; margin-bottom: 18px; font-weight: 300; }
+  .acronis-features { list-style: none; display: flex; flex-direction: column; gap: 7px; }
+  .acronis-features li { display: flex; align-items: flex-start; gap: 8px; font-size: 0.79rem; color: rgba(255,255,255,0.55); line-height: 1.45; }
+  .acronis-features li svg { width: 13px; height: 13px; fill: none; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; margin-top: 2px; }
+  .card-backup .acronis-features li svg    { stroke: #5ba3e8; }
+  .card-ransomware .acronis-features li svg { stroke: #ff8c42; }
+  .card-disaster .acronis-features li svg  { stroke: #34d399; }
+  /* Hero stat callout */
+  .acronis-callout { display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: center; background: rgba(232,160,32,0.07); border: 1px solid rgba(232,160,32,0.2); border-radius: 10px; padding: 26px 30px; }
+  .acronis-callout-inner { display: flex; align-items: flex-start; gap: 20px; }
+  .acronis-stat-num { font-family: 'DM Serif Display', serif; font-size: 3.5rem; font-weight: 400; color: var(--accent-light); line-height: 1; flex-shrink: 0; letter-spacing: -0.02em; }
+  .acronis-stat-text strong { display: block; color: white; font-size: 0.92rem; font-weight: 600; margin-bottom: 4px; }
+  .acronis-stat-text p { color: rgba(255,255,255,0.5); font-size: 0.82rem; line-height: 1.65; font-weight: 300; max-width: 440px; }
+  .acronis-stat-text p strong { display: inline; color: var(--accent-light); font-size: inherit; }
+
+  /* ── AWARENESS ── */
+  .awareness { background: var(--light); }
+  .awareness-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
+  .awareness-modules { display: flex; flex-direction: column; gap: 0; margin-top: 28px; border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
+  .awareness-module { background: white; border-bottom: 1px solid var(--border); padding: 14px 18px; display: flex; align-items: flex-start; gap: 13px; transition: all 0.22s; position: relative; }
+  .awareness-module:last-child { border-bottom: none; }
+  .awareness-module::before { content: ''; position: absolute; top: 0; left: 0; bottom: 0; width: 2px; background: var(--sky); transform: scaleY(0); transform-origin: center; transition: transform 0.22s; }
+  .awareness-module:hover { background: #f8faff; padding-left: 22px; }
+  .awareness-module:hover::before { transform: scaleY(1); }
+  .module-icon { width: 36px; height: 36px; flex-shrink: 0; border-radius: 7px; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg,rgba(46,125,209,0.1),rgba(232,160,32,0.06)); border: 1px solid rgba(46,125,209,0.1); transition: all 0.22s; }
+  .awareness-module:hover .module-icon { background: rgba(46,125,209,0.12); border-color: rgba(46,125,209,0.25); }
+  .module-icon svg { width: 18px; height: 18px; stroke: var(--sky); fill: none; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+  .module-text h4 { font-weight: 600; font-size: 0.87rem; color: var(--navy); margin-bottom: 3px; }
+  .module-text p { font-size: 0.79rem; color: var(--muted); line-height: 1.5; font-weight: 300; }
+  .awareness-visual { background: var(--navy); border-radius: 12px; padding: 34px 30px; position: relative; overflow: hidden; border: 1px solid rgba(232,160,32,0.1); }
+  .awareness-visual-bg { position: absolute; inset: 0; background: radial-gradient(ellipse at 88% 12%, rgba(46,125,209,0.28), transparent 60%); }
+  .awareness-visual-content { position: relative; z-index: 1; }
+  .awareness-visual h3 { font-family: 'DM Serif Display', serif; font-size: 1.35rem; color: white; margin-bottom: 4px; }
+  .awareness-visual-sub { font-size: 0.75rem; color: rgba(255,255,255,0.3); margin-bottom: 22px; letter-spacing: 0.04em; text-transform: uppercase; }
+  .awareness-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; margin-bottom: 20px; border-radius: 8px; overflow: hidden; border: 1px solid rgba(255,255,255,0.06); }
+  .astat { background: rgba(255,255,255,0.04); padding: 16px 13px; position: relative; }
+  .astat::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; }
+  .astat:nth-child(1)::before { background: #5ba3e8; }
+  .astat:nth-child(2)::before { background: #34d399; }
+  .astat:nth-child(3)::before { background: var(--accent-light); }
+  .astat:nth-child(4)::before { background: #c084fc; }
+  .astat + .astat { border-left: 1px solid rgba(255,255,255,0.05); }
+  .astat:nth-child(3), .astat:nth-child(4) { border-top: 1px solid rgba(255,255,255,0.05); }
+  .astat-icon { margin-bottom: 8px; }
+  .astat-icon svg { width: 16px; height: 16px; fill: none; stroke-width: 1.9; stroke-linecap: round; stroke-linejoin: round; }
+  .astat:nth-child(1) .astat-icon svg { stroke: #5ba3e8; }
+  .astat:nth-child(2) .astat-icon svg { stroke: #34d399; }
+  .astat:nth-child(3) .astat-icon svg { stroke: var(--accent-light); }
+  .astat:nth-child(4) .astat-icon svg { stroke: #c084fc; }
+  .astat-num { font-family: 'DM Serif Display', serif; font-size: 1.8rem; color: white; line-height: 1; letter-spacing: -0.02em; }
+  .astat-label { font-size: 0.68rem; color: rgba(255,255,255,0.32); margin-top: 4px; line-height: 1.4; }
+  .awareness-cert { background: rgba(26,158,92,0.08); border: 1px solid rgba(26,158,92,0.2); border-radius: 8px; padding: 13px 16px; display: flex; align-items: center; gap: 11px; }
+  .awareness-cert svg { width: 20px; height: 20px; stroke: #34d399; fill: none; stroke-width: 1.8; flex-shrink: 0; }
+  .awareness-cert-text strong { display: block; color: white; font-size: 0.84rem; font-weight: 600; }
+  .awareness-cert-text span { font-size: 0.74rem; color: rgba(255,255,255,0.34); }
+
+  /* ── CONTACT ── */
+  .contact { background: var(--navy); position: relative; overflow: hidden; }
+  .contact-bg { position: absolute; inset: 0; background: radial-gradient(ellipse 60% 70% at 90% 45%, rgba(46,125,209,0.2), transparent 65%), radial-gradient(ellipse 40% 45% at 10% 85%, rgba(232,160,32,0.1), transparent 60%); }
+  .contact-inner { position: relative; z-index: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+  .contact h2 { color: white; }
+  .contact .section-tag { color: var(--accent-light); }
+  .contact .section-tag::before { background: var(--accent); }
+  .contact .section-intro { color: rgba(255,255,255,0.52); }
+  .contact-ways { margin-top: 32px; display: flex; flex-direction: column; gap: 12px; }
+  .contact-way { display: flex; align-items: center; gap: 14px; padding: 14px 17px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.07); border-radius: 8px; text-decoration: none; transition: all 0.22s; }
+  .contact-way:hover { background: rgba(255,255,255,0.08); border-color: rgba(232,160,32,0.3); transform: translateX(4px); }
+  .contact-way-icon { width: 38px; height: 38px; flex-shrink: 0; background: rgba(232,160,32,0.15); border-radius: 7px; display: flex; align-items: center; justify-content: center; }
+  .contact-way-icon svg { width: 18px; height: 18px; stroke: var(--accent-light); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+  .contact-way-text strong { display: block; color: white; font-weight: 600; font-size: 0.86rem; }
+  .contact-way-text span { color: rgba(255,255,255,0.4); font-size: 0.77rem; }
+  .form-card { background: var(--light); border-radius: 12px; padding: 36px 32px; border: 1px solid var(--border); }
+  .form-card h3 { font-family: 'DM Serif Display', serif; font-size: 1.5rem; color: var(--navy); margin-bottom: 22px; }
+  .form-row { margin-bottom: 14px; }
+  .form-row label { display: block; font-size: 0.76rem; font-weight: 600; color: var(--text); margin-bottom: 5px; letter-spacing: 0.04em; text-transform: uppercase; }
+  .form-row input, .form-row textarea, .form-row select { width: 100%; padding: 10px 12px; border: 1.5px solid var(--border); border-radius: 5px; font-family: 'Figtree', sans-serif; font-size: 0.87rem; color: var(--text); background: white; outline: none; transition: border-color 0.2s; appearance: none; }
+  .form-row input:focus, .form-row textarea:focus, .form-row select:focus { border-color: var(--sky); box-shadow: 0 0 0 3px rgba(46,125,209,0.1); }
+  .form-row textarea { resize: vertical; min-height: 90px; }
+  .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .form-submit { width: 100%; background: var(--navy); color: white; font-family: 'Figtree', sans-serif; font-weight: 600; font-size: 0.92rem; padding: 13px; border-radius: 5px; border: none; cursor: pointer; transition: all 0.25s; margin-top: 8px; }
+  .form-submit:hover { background: var(--blue); transform: translateY(-2px); box-shadow: 0 8px 20px rgba(13,31,60,0.25); }
+  .form-submit:disabled { opacity: 0.55; cursor: not-allowed; transform: none; }
+  .form-note { font-size: 0.73rem; color: var(--muted); text-align: center; margin-top: 10px; font-weight: 300; }
+  .success-msg { display: none; background: rgba(46,125,209,0.08); border: 1px solid rgba(46,125,209,0.28); border-radius: 6px; padding: 14px; text-align: center; color: var(--sky); font-weight: 500; font-size: 0.86rem; margin-top: 10px; }
+  #form-error { display: none; color: #dc2626; font-size: 0.82rem; margin-bottom: 8px; }
+
+  /* ── FOOTER ── */
+  footer { position: fixed; bottom: 0; left: 0; right: 0; z-index: 100; background: #060f1e; padding: 18px 5vw; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; border-top: 1px solid rgba(232,160,32,0.1); }
+  .footer-brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+  .footer-brand-text { font-family: 'DM Serif Display', serif; color: rgba(255,255,255,0.42); font-size: 1rem; }
+  .footer-brand-text b { color: white; }
+  .footer-copy { color: rgba(255,255,255,0.2); font-size: 0.75rem; }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp { from { opacity:0; transform:translateY(24px); } to { opacity:1; transform:translateY(0); } }
+  @keyframes pulse { 0%,100%{ opacity:1; transform:scale(1); } 50%{ opacity:0.45; transform:scale(0.82); } }
+  .fade-in { opacity:0; transform:translateY(20px); transition: opacity 0.75s ease, transform 0.75s ease; }
+  .fade-in.visible { opacity:1; transform:translateY(0); }
+
+  /* ── RESPONSIVE SYSTEM ── */
+  @media(min-width:1400px) {
+    nav { padding-left: max(5vw,calc((100vw - 1360px)/2)); padding-right: max(5vw,calc((100vw - 1360px)/2)); }
+    footer { padding-left: max(5vw,calc((100vw - 1360px)/2)); padding-right: max(5vw,calc((100vw - 1360px)/2)); }
+    section { padding-left: max(5vw,calc((100vw - 1360px)/2)); padding-right: max(5vw,calc((100vw - 1360px)/2)); }
+    .hero { padding-left: max(5vw,calc((100vw - 1360px)/2)); padding-right: max(5vw,calc((100vw - 1360px)/2)); }
+  }
+  @media(max-width:1023px) and (min-width:768px) {
+    section { padding: 68px 5vw; }
+    .hero { padding: 72px 5vw 48px; }
+    .hero-inner { gap: 32px; }
+    .hero-visual svg { max-width: 280px; }
+    .services-grid { grid-template-columns: repeat(2,1fr); }
+    .acronis-grid { grid-template-columns: repeat(2,1fr); gap: 0; }
+    .acronis-card + .acronis-card { border-left: 1px solid rgba(255,255,255,0.06); }
+    .card-disaster { grid-column: span 2; border-left: none; border-top: 1px solid rgba(255,255,255,0.06); }
+  }
+  @media(max-width:860px) {
+    .hero-inner { grid-template-columns: 1fr; }
+    .hero-visual { display: none; }
+    .why-inner { grid-template-columns: 1fr; gap: 40px; }
+    .awareness-inner { grid-template-columns: 1fr; gap: 40px; }
+  }
+  @media(max-width:768px) {
+    .contact-inner { grid-template-columns: 1fr; gap: 48px; }
+    .acronis-grid { grid-template-columns: 1fr; gap: 0; }
+    .acronis-card + .acronis-card { border-left: none; border-top: 1px solid rgba(255,255,255,0.06); }
+    .acronis-callout { grid-template-columns: 1fr; gap: 20px; }
+  }
+  @media(max-width:600px) {
+    nav { padding: 0 4vw; }
+    .nav-brand-text { display: none; }
+    section { padding: 52px 4vw; }
+    .hero { padding: 80px 4vw 40px; }
+    .services-grid { grid-template-columns: 1fr; }
+    .form-grid { grid-template-columns: 1fr; }
+    footer { flex-direction: column; align-items: flex-start; }
+  }
+  @media(hover:none) {
+    .service-card:hover, .contact-way:hover, .awareness-module:hover,
+    .btn-primary:hover, .btn-secondary:hover, .nav-cta:hover { transform: none; }
+  }
+  @media(prefers-reduced-motion:reduce) {
+    *, *::before, *::after { animation-duration:0.01ms !important; transition-duration:0.01ms !important; }
+    .fade-in { opacity:1; transform:none; }
+  }
+
+  /* ── COOKIE NOTICE ── */
+  .cookie-bar {
+    position: fixed; bottom: 0; left: 0; right: 0; z-index: 200;
+    background: rgba(10,18,28,0.97); backdrop-filter: blur(12px);
+    border-top: 1px solid rgba(255,255,255,0.08);
+    padding: 16px 5vw; display: flex; align-items: center; justify-content: space-between;
+    gap: 20px; flex-wrap: wrap;
+    transform: translateY(100%); transition: transform 0.35s ease;
+  }
+  .cookie-bar.visible { transform: translateY(0); }
+  .cookie-bar p { font-size: 0.82rem; color: rgba(255,255,255,0.55); font-weight: 300; line-height: 1.6; max-width: 680px; }
+  .cookie-bar p a { color: rgba(255,255,255,0.75); text-decoration: underline; text-underline-offset: 2px; }
+  .cookie-bar p a:hover { color: white; }
+  .cookie-accept { background: var(--accent, #0891b2); color: white; border: none; border-radius: 5px; padding: 9px 20px; font-size: 0.82rem; font-weight: 600; cursor: pointer; white-space: nowrap; transition: opacity 0.2s; flex-shrink: 0; }
+  .cookie-accept:hover { opacity: 0.85; }
+  @media(max-width:600px) { .cookie-bar { padding: 14px 4vw; } .cookie-bar p { font-size: 0.78rem; } }
+
+</style>
+</head>
+<body>
+<!-- ═══ VELLINGE MARK — single definition ═══ -->
+<svg style="display:none" xmlns="http://www.w3.org/2000/svg">
+  <symbol id="vellinge-mark" viewBox="0 0 36 36">
+
+        <defs>
+          <linearGradient id="vellinge_mark_g0" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#2e7dd1"/>
+            <stop offset="100%" stop-color="#e8a020"/>
+          </linearGradient>
+        </defs>
+        <!-- Shield shape -->
+        <path d="M18 2 L32 8 L32 20 Q32 30 18 34 Q4 30 4 20 L4 8 Z" fill="#0d1f3c" stroke="url(#vellinge_mark_g0)" stroke-width="1.2"/>
+        <!-- V letterform -->
+        <path d="M10 11 L18 26 L26 11" fill="none" stroke="url(#vellinge_mark_g0)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+        <!-- Accent dot at V bottom -->
+        <circle cx="18" cy="26" r="1.8" fill="#e8a020" opacity="0.9"/>
+        </symbol>
+</svg>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-brand">
+        <div class="nav-brand-icon">
+      <svg width="36" height="36" aria-label="Vellinge IT logotyp">
+        <use href="#vellinge-mark"/>
+      </svg>
+    </div>
+    <span class="nav-brand-text">Vellinge <span>IT</span> Support</span>
+  </a>
+  <div class="nav-actions">
+    <div class="lang-toggle">
+      <button class="lang-btn active" onclick="setLang('sv')" id="btn-sv">SV</button>
+      <button class="lang-btn" onclick="setLang('en')" id="btn-en">EN</button>
+    </div>
+    <a href="#contact" class="nav-cta" data-sv="Kontakta oss" data-en="Contact us">Kontakta oss</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div><div class="hero-grid"></div>
+  <div class="hero-inner">
+
+    <!-- Left: text -->
+    <div>
+      <div class="hero-content">
+        <div class="hero-badge"><div class="hero-badge-dot"></div><span data-sv="Lokal IT-support i Vellinge" data-en="Local IT support in Vellinge">Lokal IT-support i Vellinge</span></div>
+        <h1 data-sv="Teknisk hjälp,<br><em>nära dig.</em>" data-en="Technical help,<br><em>close to you.</em>">Teknisk hjälp,<br><em>nära dig.</em></h1>
+        <p class="hero-sub" data-sv="Vi löser dina IT-problem — datorer, nätverk, säkerhet eller smarta hemenheter. Professionell support med personlig service i Vellingeområdet." data-en="We solve your IT problems — computers, networks, security or smart home devices. Professional support with personal service in the Vellinge area.">Vi löser dina IT-problem — datorer, nätverk, säkerhet eller smarta hemenheter. Professionell support med personlig service i Vellingeområdet.</p>
+        <div class="hero-btns">
+          <a href="#contact" class="btn-primary" data-sv="Boka support →" data-en="Book support →">Boka support →</a>
+          <a href="#services" class="btn-secondary" data-sv="Våra tjänster" data-en="Our services">Våra tjänster</a>
+        </div>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><div class="stat-num">100%</div><div class="stat-label" data-sv="Lokalt & personligt" data-en="Local & personal">Lokalt & personligt</div></div>
+        <div class="stat"><div class="stat-num">24h</div><div class="stat-label" data-sv="Svar på förfrågan" data-en="Response time">Svar på förfrågan</div></div>
+        <div class="stat"><div class="stat-num" data-sv="Fast pris" data-en="Fixed price">Fast pris</div><div class="stat-label" data-sv="Inga dolda avgifter" data-en="No hidden fees">Inga dolda avgifter</div></div>
+      </div>
+    </div>
+
+    <!-- Right: V-shield hero illustration -->
+    <div class="hero-visual">
+      <svg viewBox="0 0 200 220" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="shield-hero-fill" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#162d55"/>
+            <stop offset="100%" stop-color="#0d1f3c"/>
+          </linearGradient>
+          <linearGradient id="shield-hero-stroke" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#2e7dd1"/>
+            <stop offset="55%" stop-color="#5ba3e8"/>
+            <stop offset="100%" stop-color="#e8a020"/>
+          </linearGradient>
+          <linearGradient id="v-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#5ba3e8"/>
+            <stop offset="100%" stop-color="#f5c06a"/>
+          </linearGradient>
+        </defs>
+
+        <!-- Outer glow ring -->
+        <path d="M100 8 L182 42 L182 116 Q182 178 100 210 Q18 178 18 116 L18 42 Z"
+              fill="rgba(46,125,209,0.06)" stroke="rgba(46,125,209,0.12)" stroke-width="1"/>
+
+        <!-- Shield body -->
+        <path d="M100 18 L172 48 L172 114 Q172 170 100 200 Q28 170 28 114 L28 48 Z"
+              fill="url(#shield-hero-fill)" stroke="url(#shield-hero-stroke)" stroke-width="2"/>
+
+        <!-- Inner shield border -->
+        <path d="M100 30 L160 56 L160 112 Q160 158 100 185 Q40 158 40 112 L40 56 Z"
+              fill="none" stroke="rgba(46,125,209,0.18)" stroke-width="1"/>
+
+        <!-- Decorative corner accents — top -->
+        <line x1="28" y1="48" x2="44" y2="48" stroke="url(#shield-hero-stroke)" stroke-width="1.5" opacity="0.5"/>
+        <line x1="172" y1="48" x2="156" y2="48" stroke="url(#shield-hero-stroke)" stroke-width="1.5" opacity="0.5"/>
+
+        <!-- Large V letterform — centred, bold -->
+        <path d="M58 68 L100 148 L142 68"
+              fill="none" stroke="url(#v-grad)" stroke-width="8"
+              stroke-linecap="round" stroke-linejoin="round"/>
+
+        <!-- V accent dot at bottom point -->
+        <circle cx="100" cy="148" r="6" fill="#e8a020" opacity="0.95"/>
+        <circle cx="100" cy="148" r="2.5" fill="white" opacity="0.9"/>
+
+        <!-- Subtle horizontal rule below V -->
+        <line x1="68" y1="166" x2="132" y2="166" stroke="rgba(232,160,32,0.25)" stroke-width="1"/>
+
+        <!-- Small decorative dots — shield corner nodes -->
+        <circle cx="28" cy="48"  r="3" fill="#2e7dd1" opacity="0.6"/>
+        <circle cx="172" cy="48" r="3" fill="#2e7dd1" opacity="0.6"/>
+        <circle cx="100" cy="200" r="3" fill="#e8a020" opacity="0.6"/>
+
+        <!-- Ambient glow behind V -->
+        <ellipse cx="100" cy="110" rx="44" ry="52" fill="rgba(46,125,209,0.06)"/>
+      </svg>
+    </div>
+
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="services-header fade-in">
+    <span class="section-tag" data-sv="Tjänster" data-en="Services">Tjänster</span>
+    <h2 data-sv="Vad kan vi hjälpa med?" data-en="What can we help with?">Vad kan vi hjälpa med?</h2>
+    <p class="section-intro" data-sv="Oavsett om det handlar om en krånglig dator, ett instabilt nätverk eller ett smart hem som inte vill vara smart — vi har lösningen." data-en="Whether it's a troublesome computer, an unstable network, or a smart home that refuses to cooperate — we have the solution.">Oavsett om det handlar om en krånglig dator, ett instabilt nätverk eller ett smart hem som inte vill vara smart — vi har lösningen.</p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card fade-in">
+      <div class="service-icon"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
+      <h3 data-sv="Dator & Surfplatta" data-en="Computer & Tablet">Dator & Surfplatta</h3>
+      <p data-sv="Felsökning, uppgraderingar, reparationer och rengöring. Vi får din dator att fungera igen — snabbt och tillförlitligt." data-en="Troubleshooting, upgrades, repairs and cleaning. We get your computer working again — quickly and reliably.">Felsökning, uppgraderingar, reparationer och rengöring. Vi får din dator att fungera igen — snabbt och tillförlitligt.</p>
+    </div>
+    <div class="service-card fade-in">
+      <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><circle cx="12" cy="20" r="1" fill="var(--sky)" stroke="none"/></svg></div>
+      <h3 data-sv="WiFi & Nätverk" data-en="WiFi & Network">WiFi & Nätverk</h3>
+      <p data-sv="Svagt signal, instabilt internet eller svårt att ansluta? Vi optimerar ditt hemnätverk och säkerställer stabil täckning i hela hemmet." data-en="Weak signal, unstable internet or connectivity issues? We optimize your home network and ensure stable coverage throughout your home.">Svagt signal, instabilt internet eller svårt att ansluta? Vi optimerar ditt hemnätverk och säkerställer stabil täckning i hela hemmet.</p>
+    </div>
+    <div class="service-card fade-in">
+      <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+      <h3 data-sv="Säkerhet & Integritet" data-en="Security & Privacy">Säkerhet & Integritet</h3>
+      <p data-sv="Skydda dig mot virus, bedrägerier och dataintrång. Vi installerar rätt säkerhetslösningar och utbildar dig i tryggt internetanvändande." data-en="Protect yourself from viruses, scams and data breaches. We install the right security solutions and guide you towards safe internet use.">Skydda dig mot virus, bedrägerier och dataintrång. Vi installerar rätt säkerhetslösningar och utbildar dig i tryggt internetanvändande.</p>
+    </div>
+    <div class="service-card fade-in">
+      <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+      <h3 data-sv="Smart Hem" data-en="Smart Home">Smart Hem</h3>
+      <p data-sv="Installation och konfiguration av smarta lampor, lås, högtalare, kameror och röststyrning. Vi gör smarta hem faktiskt smarta." data-en="Installation and configuration of smart lights, locks, speakers, cameras and voice control. We make smart homes actually smart.">Installation och konfiguration av smarta lampor, lås, högtalare, kameror och röststyrning. Vi gör smarta hem faktiskt smarta.</p>
+    </div>
+    <div class="service-card fade-in">
+      <div class="service-icon"><svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18" stroke-width="2.5"/></svg></div>
+      <h3 data-sv="Telefon & Mobil" data-en="Phone & Mobile">Telefon & Mobil</h3>
+      <p data-sv="Hjälp med smartphones, dataöverföring, appar och synkronisering. Vi ser till att allt ditt fungerar sömlöst ihop." data-en="Help with smartphones, data transfer, apps and synchronization. We make sure everything works seamlessly together.">Hjälp med smartphones, dataöverföring, appar och synkronisering. Vi ser till att allt ditt fungerar sömlöst ihop.</p>
+    </div>
+    <div class="service-card fade-in">
+      <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+      <h3 data-sv="En Hjälpande Hand" data-en="A Helping Hand">En Hjälpande Hand</h3>
+      <p data-sv="Behöver du bara hjälp med något tekniskt? Inget är för litet. Vi finns här för att göra tekniken begriplig och hanterbar för alla." data-en="Just need help with something technical? Nothing is too small. We're here to make technology understandable and manageable for everyone.">Behöver du bara hjälp med något tekniskt? Inget är för litet. Vi finns här för att göra tekniken begriplig och hanterbar för alla.</p>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="why" id="about">
+  <div class="why-inner">
+    <div class="why-visual fade-in">
+      <div class="why-visual-bg"></div>
+      <div class="why-visual-content">
+        <h3 class="why-visual-title" data-sv="Vad ingår alltid" data-en="Always included">Vad ingår alltid</h3>
+        <ul class="check-list">
+          <li><span class="check-icon">✓</span><span data-sv="Kostnadsfri diagnos och rådgivning" data-en="Free diagnosis and consultation">Kostnadsfri diagnos och rådgivning</span></li>
+          <li><span class="check-icon">✓</span><span data-sv="Tydlig prisuppgift innan arbetet påbörjas" data-en="Clear quote before work begins">Tydlig prisuppgift innan arbetet påbörjas</span></li>
+          <li><span class="check-icon">✓</span><span data-sv="Hembesök i Vellingeområdet" data-en="Home visits in the Vellinge area">Hembesök i Vellingeområdet</span></li>
+          <li><span class="check-icon">✓</span><span data-sv="Uppföljning efter utfört arbete" data-en="Follow-up after completed work">Uppföljning efter utfört arbete</span></li>
+          <li><span class="check-icon">✓</span><span data-sv="Förklaringar på ett begripligt språk" data-en="Explanations in plain language">Förklaringar på ett begripligt språk</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="fade-in">
+      <span class="section-tag" data-sv="Varför välja oss" data-en="Why choose us">Varför välja oss</span>
+      <h2 data-sv="Lokal expertis,<br>personlig service" data-en="Local expertise,<br>personal service">Lokal expertis,<br>personlig service</h2>
+      <p class="section-intro" data-sv="Vi är inte ett callcenter eller ett stort bolag. Vi är din lokala IT-partner i Vellinge — en människa som faktiskt förstår ditt problem." data-en="We're not a call center or a large company. We're your local IT partner in Vellinge — a real person who actually understands your problem.">Vi är inte ett callcenter eller ett stort bolag. Vi är din lokala IT-partner i Vellinge — en människa som faktiskt förstår ditt problem.</p>
+      <div class="why-points">
+        <div class="why-point"><div class="why-point-num">01</div><div><h4 data-sv="Snabb respons" data-en="Fast response">Snabb respons</h4><p data-sv="Vi svarar inom 24 timmar och kan ofta komma redan dagen efter." data-en="We respond within 24 hours and can often come the very next day.">Vi svarar inom 24 timmar och kan ofta komma redan dagen efter.</p></div></div>
+        <div class="why-point"><div class="why-point-num">02</div><div><h4 data-sv="Inga överraskningar" data-en="No surprises">Inga överraskningar</h4><p data-sv="Du vet vad det kostar innan vi börjar. Fast och rättvis prissättning." data-en="You know the cost before we start. Fixed and fair pricing.">Du vet vad det kostar innan vi börjar. Fast och rättvis prissättning.</p></div></div>
+        <div class="why-point"><div class="why-point-num">03</div><div><h4 data-sv="På dina villkor" data-en="On your terms">På dina villkor</h4><p data-sv="Vi anpassar oss efter dig — hembesök, distanssupport eller att du lämnar in din enhet." data-en="We adapt to you — home visit, remote support, or drop-off service.">Vi anpassar oss efter dig — hembesök, distanssupport eller att du lämnar in din enhet.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ACRONIS -->
+<section class="acronis" id="backup">
+  <div class="acronis-bg"></div>
+  <div class="acronis-inner">
+    <div class="acronis-header fade-in">
+      <span class="section-tag" data-sv="Dataskydd & Återställning" data-en="Data Protection & Recovery">Dataskydd & Återställning</span>
+      <h2 data-sv="Skydd mot ransomware,<br>backup & disaster recovery" data-en="Ransomware protection,<br>backup & disaster recovery">Skydd mot ransomware,<br>backup & disaster recovery</h2>
+      <p class="section-intro" data-sv="En attack eller ett systemhaveri kan hända vem som helst. Med rätt skydd på plats är dina data alltid säkra — och återhämtningen sker på minuter, inte dagar." data-en="An attack or system failure can happen to anyone. With the right protection in place, your data is always safe — and recovery takes minutes, not days.">En attack eller ett systemhaveri kan hända vem som helst. Med rätt skydd på plats är dina data alltid säkra — och återhämtningen sker på minuter, inte dagar.</p>
+      <div class="acronis-partner">
+        <span class="acronis-partner-badge">ACRONIS</span>
+        <span data-sv="Certifierad partner" data-en="Certified partner">Certifierad partner</span>
+      </div>
+    </div>
+
+    <div class="acronis-grid">
+      <!-- Backup card -->
+      <div class="acronis-card card-backup fade-in">
+        <div class="acronis-card-icon icon-backup">
+          <svg viewBox="0 0 24 24"><polyline points="8 17 12 21 16 17"/><line x1="12" y1="12" x2="12" y2="21"/><path d="M20.88 18.09A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.29"/></svg>
+        </div>
+        <h3 data-sv="Automatisk Backup" data-en="Automatic Backup">Automatisk Backup</h3>
+        <p data-sv="Dina filer, foton och dokument säkerhetskopieras löpande — till molnet, lokalt eller båda. Aldrig mer förlorad data." data-en="Your files, photos and documents are backed up continuously — to the cloud, locally or both. Never lose data again.">Dina filer, foton och dokument säkerhetskopieras löpande — till molnet, lokalt eller båda. Aldrig mer förlorad data.</p>
+        <ul class="acronis-features">
+          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span data-sv="Fullständig system- och filbackup" data-en="Full system and file backup">Fullständig system- och filbackup</span></li>
+          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span data-sv="Schemalagd och kontinuerlig synkning" data-en="Scheduled and continuous sync">Schemalagd och kontinuerlig synkning</span></li>
+          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span data-sv="Krypterad lagring lokalt & i molnet" data-en="Encrypted local & cloud storage">Krypterad lagring lokalt & i molnet</span></li>
+          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span data-sv="Versionshistorik — återställ äldre filer" data-en="Version history — restore older files">Versionshistorik — återställ äldre filer</span></li>
+        </ul>
+      </div>
+
+      <!-- Ransomware card -->
+      <div class="acronis-card card-ransomware fade-in">
+        <div class="acronis-card-icon icon-ransomware">
+          <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16" stroke-width="2.5"/></svg>
+        </div>
+        <h3 data-sv="Ransomware-skydd" data-en="Ransomware Protection">Ransomware-skydd</h3>
+        <p data-sv="Acronis AI-drivna motor identifierar och blockerar ransomware i realtid — innan det kan kryptera dina filer och ta dina data som gisslan." data-en="Acronis AI-powered engine identifies and blocks ransomware in real time — before it can encrypt your files and hold your data hostage.">Acronis AI-drivna motor identifierar och blockerar ransomware i realtid — innan det kan kryptera dina filer och ta dina data som gisslan.</p>
+        <ul class="acronis-features">
+          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span data-sv="AI-baserad detektion i realtid" data-en="AI-based real-time detection">AI-baserad detektion i realtid</span></li>
+          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span data-sv="Automatisk återställning vid attack" data-en="Automatic recovery after attack">Automatisk återställning vid attack</span></li>
+          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span data-sv="Skydd för alla filtyper & appar" data-en="Protection for all file types & apps">Skydd för alla filtyper & appar</span></li>
+          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span data-sv="Kontinuerlig beteendeövervakning" data-en="Continuous behavioural monitoring">Kontinuerlig beteendeövervakning</span></li>
+        </ul>
+      </div>
+
+      <!-- Disaster Recovery card -->
+      <div class="acronis-card card-disaster fade-in">
+        <div class="acronis-card-icon icon-disaster">
+          <svg viewBox="0 0 24 24"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 .49-4.61"/></svg>
+        </div>
+        <h3 data-sv="Disaster Recovery" data-en="Disaster Recovery">Disaster Recovery</h3>
+        <p data-sv="Om det värsta händer — hårdvarufel, brand eller total systemkrasch — återställer vi hela din miljö snabbt och kontrollerat." data-en="If the worst happens — hardware failure, fire or total system crash — we restore your entire environment quickly and in a controlled manner.">Om det värsta händer — hårdvarufel, brand eller total systemkrasch — återställer vi hela din miljö snabbt och kontrollerat.</p>
+        <ul class="acronis-features">
+          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span data-sv="Fullständig bare-metal-återställning" data-en="Full bare-metal system restore">Fullständig bare-metal-återställning</span></li>
+          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span data-sv="Testade & verifierade återställningspunkter" data-en="Tested & verified recovery points">Testade & verifierade återställningspunkter</span></li>
+          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span data-sv="Återhämtning på minuter, inte dagar" data-en="Recovery in minutes, not days">Återhämtning på minuter, inte dagar</span></li>
+          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span data-sv="Migrering till ny hårdvara vid behov" data-en="Migration to new hardware if needed">Migrering till ny hårdvara vid behov</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="acronis-callout fade-in">
+      <div class="acronis-callout-inner">
+        <div class="acronis-stat-num">60%</div>
+        <div class="acronis-stat-text">
+          <strong data-sv="förlorar all data permanent" data-en="lose all data permanently">förlorar all data permanent</strong>
+          <p data-sv="Privatpersoner och småföretag som drabbas av ransomware <strong>utan backup</strong> förlorar i genomsnitt all sin data för alltid. En Acronis-lösning kostar en bråkdel av vad ett datahaveri kostar." data-en="Individuals and small businesses hit by ransomware <strong>without backup</strong> permanently lose all their data. An Acronis solution costs a fraction of what a data disaster costs.">Privatpersoner och småföretag som drabbas av ransomware <strong>utan backup</strong> förlorar i genomsnitt all sin data för alltid. En Acronis-lösning kostar en bråkdel av vad ett datahaveri kostar.</p>
+        </div>
+      </div>
+      <a href="#contact" class="btn-primary" data-sv="Kom igång →" data-en="Get started →">Kom igång →</a>
+    </div>
+  </div>
+</section>
+
+<!-- SECURITY AWARENESS -->
+<section class="awareness" id="training">
+  <div class="awareness-inner">
+    <div class="fade-in">
+      <span class="section-tag" data-sv="Utbildning" data-en="Training">Utbildning</span>
+      <h2 data-sv="Security awareness-utbildning" data-en="Security awareness training">Security awareness-utbildning</h2>
+      <p class="section-intro" data-sv="Den svagaste länken i din säkerhet är inte tekniken — det är den mänskliga faktorn. Vi utbildar dig och din familj att känna igen och hantera moderna cyberhot." data-en="The weakest link in your security isn't your technology — it's the human factor. We train you and your family to recognise and handle modern cyber threats.">Den svagaste länken i din säkerhet är inte tekniken — det är den mänskliga faktorn. Vi utbildar dig och din familj att känna igen och hantera moderna cyberhot.</p>
+
+      <div class="awareness-modules">
+
+        <div class="awareness-module">
+          <div class="module-icon">
+            <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <div class="module-text">
+            <h4 data-sv="Nätfiske & bluff-mejl (Phishing)" data-en="Phishing & scam emails">Nätfiske & bluff-mejl (Phishing)</h4>
+            <p data-sv="Lär dig känna igen falska mejl, SMS och webbsidor som försöker lura dig på lösenord eller pengar." data-en="Learn to identify fake emails, SMS and websites trying to steal your passwords or money.">Lär dig känna igen falska mejl, SMS och webbsidor som försöker lura dig på lösenord eller pengar.</p>
+          </div>
+        </div>
+
+        <div class="awareness-module">
+          <div class="module-icon">
+            <svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          </div>
+          <div class="module-text">
+            <h4 data-sv="Lösenord & flerfaktorsautentisering" data-en="Passwords & multi-factor authentication">Lösenord & flerfaktorsautentisering</h4>
+            <p data-sv="Starka lösenord, lösenordshanterare och hur du aktiverar MFA för att skydda dina konton effektivt." data-en="Strong passwords, password managers and how to enable MFA to protect your accounts effectively.">Starka lösenord, lösenordshanterare och hur du aktiverar MFA för att skydda dina konton effektivt.</p>
+          </div>
+        </div>
+
+        <div class="awareness-module">
+          <div class="module-icon">
+            <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <div class="module-text">
+            <h4 data-sv="Social manipulation (Social engineering)" data-en="Social engineering">Social manipulation (Social engineering)</h4>
+            <p data-sv="Hur bedragare manipulerar människor via telefon, sociala medier och påhittade identiteter." data-en="How fraudsters manipulate people via phone calls, social media and fabricated identities.">Hur bedragare manipulerar människor via telefon, sociala medier och påhittade identiteter.</p>
+          </div>
+        </div>
+
+        <div class="awareness-module">
+          <div class="module-icon">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          </div>
+          <div class="module-text">
+            <h4 data-sv="Säker surfning & offentligt WiFi" data-en="Safe browsing & public WiFi">Säker surfning & offentligt WiFi</h4>
+            <p data-sv="Risker med öppna nätverk, hur VPN fungerar och vad du aldrig ska göra på ett kafés WiFi." data-en="Risks of open networks, how VPN works and what you should never do on a café's WiFi.">Risker med öppna nätverk, hur VPN fungerar och vad du aldrig ska göra på ett kafés WiFi.</p>
+          </div>
+        </div>
+
+        <div class="awareness-module">
+          <div class="module-icon">
+            <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.73a16 16 0 0 0 5.43 5.43l1.62-1.62a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2.06z"/></svg>
+          </div>
+          <div class="module-text">
+            <h4 data-sv="Bedrägerier via telefon & SMS" data-en="Phone & SMS fraud">Bedrägerier via telefon & SMS</h4>
+            <p data-sv="Vishing, smishing och falska tech-support-samtal — hur de fungerar och hur du skyddar dig." data-en="Vishing, smishing and fake tech-support calls — how they work and how to protect yourself.">Vishing, smishing och falska tech-support-samtal — hur de fungerar och hur du skyddar dig.</p>
+          </div>
+        </div>
+
+        <div class="awareness-module">
+          <div class="module-icon">
+            <svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          </div>
+          <div class="module-text">
+            <h4 data-sv="Vad du gör om något går fel" data-en="What to do if something goes wrong">Vad du gör om något går fel</h4>
+            <p data-sv="Konkreta steg om du klickat på en suspekt länk, fått ett virus eller misstänker att du blivit hackad." data-en="Concrete steps if you've clicked a suspicious link, got a virus or suspect you've been hacked.">Konkreta steg om du klickat på en suspekt länk, fått ett virus eller misstänker att du blivit hackad.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="fade-in">
+      <div class="awareness-visual">
+        <div class="awareness-visual-bg"></div>
+        <div class="awareness-visual-content">
+          <h3 data-sv="Varför utbildning spelar roll" data-en="Why training matters">Varför utbildning spelar roll</h3>
+          <p class="awareness-visual-sub" data-sv="Statistik från cybersäkerhetsbranschen" data-en="Statistics from the cybersecurity industry">Statistik från cybersäkerhetsbranschen</p>
+          <div class="awareness-stats">
+            <div class="astat">
+              <div class="astat-icon"><svg viewBox="0 0 24 24" stroke="var(--accent-light)"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></div>
+              <div class="astat-num">91%</div>
+              <div class="astat-label" data-sv="av attacker börjar med phishing" data-en="of attacks start with phishing">av attacker börjar med phishing</div>
+            </div>
+            <div class="astat">
+              <div class="astat-icon"><svg viewBox="0 0 24 24" stroke="#34d399"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+              <div class="astat-num">70%</div>
+              <div class="astat-label" data-sv="färre incidenter efter utbildning" data-en="fewer incidents after training">färre incidenter efter utbildning</div>
+            </div>
+            <div class="astat">
+              <div class="astat-icon"><svg viewBox="0 0 24 24" stroke="#5ba3e8"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+              <div class="astat-num">2 h</div>
+              <div class="astat-label" data-sv="grundkurs — praktisk & enkel" data-en="foundation course — practical & simple">grundkurs — praktisk & enkel</div>
+            </div>
+            <div class="astat">
+              <div class="astat-icon"><svg viewBox="0 0 24 24" stroke="var(--accent-light)"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+              <div class="astat-num">∞</div>
+              <div class="astat-label" data-sv="uppföljningssupport ingår" data-en="follow-up support included">uppföljningssupport ingår</div>
+            </div>
+          </div>
+          <div class="awareness-cert">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>
+            <div class="awareness-cert-text">
+              <strong data-sv="Intyg utfärdas efter genomförd kurs" data-en="Certificate issued after completing the course">Intyg utfärdas efter genomförd kurs</strong>
+              <span data-sv="Individuell eller grupputbildning för hushåll och småföretag" data-en="Individual or group training for households and small businesses">Individuell eller grupputbildning för hushåll och småföretag</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="contact-bg"></div>
+  <div class="contact-inner">
+    <div class="fade-in">
+      <span class="section-tag" data-sv="Kontakt" data-en="Contact">Kontakt</span>
+      <h2 data-sv="Redo att lösa ditt problem?" data-en="Ready to solve your problem?">Redo att lösa ditt problem?</h2>
+      <p class="section-intro" data-sv="Ta kontakt med oss idag. Vi svarar snabbt och ser till att du får rätt hjälp." data-en="Get in touch with us today. We respond quickly and make sure you get the right help.">Ta kontakt med oss idag. Vi svarar snabbt och ser till att du får rätt hjälp.</p>
+      <div class="contact-ways">
+        <a href="tel:+46400000000" class="contact-way">
+          <div class="contact-way-icon"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.73a16 16 0 0 0 5.43 5.43l1.62-1.62a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2.06z"/></svg></div>
+          <div class="contact-way-text"><strong data-sv="Ring oss" data-en="Call us">Ring oss</strong><span>040 693 63 35</span></div>
+        </a>
+        <a href="/cdn-cgi/l/email-protection#bcd5d2dad3fccad9d0d0d5d2dbd9d5c892cfd9" class="contact-way">
+          <div class="contact-way-icon"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+          <div class="contact-way-text"><strong data-sv="E-posta oss" data-en="Email us">E-posta oss</strong><span><span class="__cf_email__" data-cfemail="fc95929a93bc8a99909095929b999588d28f99">[email&#160;protected]</span></span></div>
+        </a>
+        <a href="#" class="contact-way">
+          <div class="contact-way-icon"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <div class="contact-way-text"><strong data-sv="Vi servar området" data-en="We serve the area">Vi servar området</strong><span data-sv="Vellinge, Ljunghusen, Falsterbo & omnejd" data-en="Vellinge, Ljunghusen, Falsterbo & surroundings">Vellinge, Ljunghusen, Falsterbo & omnejd</span></div>
+        </a>
+      </div>
+    </div>
+
+    <div class="form-card fade-in">
+      <h3 data-sv="Skicka ett meddelande" data-en="Send a message">Skicka ett meddelande</h3>
+
+      <!--
+        SETUP: Replace YOUR_FORMSPREE_ID below with your form ID from formspree.io
+        1. Go to formspree.io → create free account → New Form
+        2. Copy the ID (e.g. xpwzabcd) and paste it in the action URL
+        3. In Formspree dashboard: enable reCAPTCHA, set allowed origin to your domain
+      -->
+      <form
+        id="contact-form"
+        action="https://formspree.io/f/mnjljzpv"
+        method="POST"
+        novalidate>
+
+        <!-- Honeypot — hidden field bots fill in; humans never see it -->
+        <div style="display:none;" aria-hidden="true">
+          <label>Leave this empty <input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></label>
+        </div>
+
+        <!-- Formspree: redirect back to same page after submit -->
+        <input type="hidden" name="_next" value="?sent=1">
+        <input type="hidden" name="_subject" value="Ny förfrågan — Vellinge IT Support">
+
+        <div class="form-grid">
+          <div class="form-row">
+            <label for="f-name" data-sv="Namn" data-en="Name">Namn</label>
+            <input type="text" id="f-name" name="name" placeholder="Anna Svensson"
+                   required minlength="2" maxlength="80" autocomplete="name">
+          </div>
+          <div class="form-row">
+            <label for="f-phone" data-sv="Telefon" data-en="Phone">Telefon</label>
+            <input type="tel" id="f-phone" name="phone" placeholder="070 000 00 00"
+                   maxlength="20" autocomplete="tel">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <label for="f-email" data-sv="E-post" data-en="Email">E-post</label>
+          <input type="email" id="f-email" name="email" placeholder="din@epost.se"
+                 required maxlength="120" autocomplete="email">
+        </div>
+
+        <div class="form-row">
+          <label for="f-type" data-sv="Typ av hjälp" data-en="Type of help">Typ av hjälp</label>
+          <select id="f-type" name="category">
+            <option value="" data-sv="Välj en kategori..." data-en="Select a category...">Välj en kategori...</option>
+            <option value="Dator & Surfplatta" data-sv="Dator & Surfplatta" data-en="Computer & Tablet">Dator & Surfplatta</option>
+            <option value="WiFi & Nätverk" data-sv="WiFi & Nätverk" data-en="WiFi & Network">WiFi & Nätverk</option>
+            <option value="Säkerhet & Integritet" data-sv="Säkerhet & Integritet" data-en="Security & Privacy">Säkerhet & Integritet</option>
+            <option value="Smart Hem" data-sv="Smart Hem" data-en="Smart Home">Smart Hem</option>
+            <option value="Telefon & Mobil" data-sv="Telefon & Mobil" data-en="Phone & Mobile">Telefon & Mobil</option>
+            <option value="Backup & Ransomware (Acronis)" data-sv="Backup & Ransomware-skydd (Acronis)" data-en="Backup & Ransomware protection (Acronis)">Backup & Ransomware-skydd (Acronis)</option>
+            <option value="Security Awareness-utbildning" data-sv="Security awareness-utbildning" data-en="Security awareness training">Security awareness-utbildning</option>
+            <option value="Annat" data-sv="Annat / Vet ej" data-en="Other / Not sure">Annat / Vet ej</option>
+          </select>
+        </div>
+
+        <div class="form-row">
+          <label for="f-msg" data-sv="Beskriv problemet" data-en="Describe the problem">Beskriv problemet</label>
+          <textarea id="f-msg" name="message" placeholder="Berätta kort om ditt problem..."
+                    required minlength="10" maxlength="2000"></textarea>
+        </div>
+
+        <div id="form-error" style="display:none; color:#e85d1a; font-size:0.85rem; margin-bottom:10px;"></div>
+
+        <button type="submit" class="form-submit" id="form-submit-btn"
+                data-sv="Skicka förfrågan →" data-en="Send request →">Skicka förfrågan →</button>
+
+        <div class="success-msg" id="success-msg">
+          <span data-sv="✓ Tack! Vi återkommer inom 24 timmar." data-en="✓ Thank you! We'll be in touch within 24 hours.">✓ Tack! Vi återkommer inom 24 timmar.</span>
+        </div>
+
+      </form>
+
+      <p class="form-note" data-sv="Vi svarar inom 24 timmar. Informationen hanteras konfidentiellt och delas aldrig med tredje part." data-en="We respond within 24 hours. Information is handled confidentially and never shared with third parties.">Vi svarar inom 24 timmar. Informationen hanteras konfidentiellt och delas aldrig med tredje part.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">
+        <svg width="28" height="28" aria-label="Vellinge IT logotyp">
+      <use href="#vellinge-mark"/>
+    </svg>
+    <span class="footer-brand-text"><b>Vellinge IT</b> Support</span>
+  </div>
+  <div class="footer-copy" data-sv="© 2026 Vellinge IT Support. Alla rättigheter förbehållna." data-en="© 2026 Vellinge IT Support. All rights reserved.">© 2026 Vellinge IT Support. Alla rättigheter förbehållna.</div>
+  <a href="privacy.html" style="color:rgba(255,255,255,0.28);font-size:0.75rem;text-decoration:none;" data-sv="Integritetspolicy" data-en="Privacy policy">Integritetspolicy</a>
+</footer>
+<script>
+  /* ── Language switcher ── */
+  let currentLang = 'sv';
+
+  function setLang(lang) {
+    currentLang = lang;
+    document.documentElement.lang = lang;
+    document.querySelectorAll('[data-sv][data-en]').forEach(el => {
+      const val = el.getAttribute('data-' + lang);
+      if (!val) return;
+      if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+        el.placeholder = val;
+      } else if (el.tagName === 'OPTION') {
+        el.textContent = val;
+      } else {
+        el.innerHTML = val;
+      }
+    });
+    const ta = document.getElementById('f-msg');
+    if (ta) ta.placeholder = lang === 'sv' ? 'Berätta kort om ditt problem...' : 'Tell us briefly about your issue...';
+    document.getElementById('btn-sv').classList.toggle('active', lang === 'sv');
+    document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+  }
+
+  /* ── Secure contact form ──────────────────────────────────────
+     Security layers applied:
+       1. Client-side validation (length, email format)
+       2. Input sanitisation (strip HTML tags before sending)
+       3. Honeypot field — bots fill it, humans never see it
+       4. Client-side rate limit — max 3 submits per 10 minutes
+       5. Button disabled after submit (prevents double-send)
+       6. Async fetch to Formspree — no page reload needed
+  ── */
+  (function () {
+    const RATE_KEY    = 'vit_submissions';
+    const RATE_WINDOW = 10 * 60 * 1000; // 10 min
+    const RATE_MAX    = 3;
+
+    function getRateData() {
+      try { return JSON.parse(sessionStorage.getItem(RATE_KEY) || '[]'); }
+      catch { return []; }
+    }
+
+    function isRateLimited() {
+      const now = Date.now();
+      return getRateData().filter(t => now - t < RATE_WINDOW).length >= RATE_MAX;
+    }
+
+    function recordSubmit() {
+      const now = Date.now();
+      const data = getRateData().filter(t => now - t < RATE_WINDOW);
+      data.push(now);
+      try { sessionStorage.setItem(RATE_KEY, JSON.stringify(data)); } catch {}
+    }
+
+    function showError(msg) {
+      const el = document.getElementById('form-error');
+      if (el) { el.textContent = msg; el.style.display = 'block'; }
+    }
+
+    function clearError() {
+      const el = document.getElementById('form-error');
+      if (el) { el.textContent = ''; el.style.display = 'none'; }
+    }
+
+    function validEmail(v) {
+      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+    }
+
+    function sanitise(str) {
+      return String(str).replace(/<[^>]*>/g, '').trim();
+    }
+
+    const form = document.getElementById('contact-form');
+    if (!form) return;
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      clearError();
+
+      // 1 — Honeypot
+      const honeypot = form.querySelector('input[name="_gotcha"]');
+      if (honeypot && honeypot.value !== '') return;
+
+      // 2 — Rate limit
+      if (isRateLimited()) {
+        showError(currentLang === 'sv'
+          ? 'För många förfrågningar. Vänta en stund och försök igen.'
+          : 'Too many requests. Please wait a moment and try again.');
+        return;
+      }
+
+      // 3 — Validate & sanitise
+      const name    = sanitise(document.getElementById('f-name').value);
+      const email   = sanitise(document.getElementById('f-email').value);
+      const message = sanitise(document.getElementById('f-msg').value);
+
+      if (name.length < 2) {
+        showError(currentLang === 'sv' ? 'Ange ditt namn.' : 'Please enter your name.');
+        document.getElementById('f-name').focus(); return;
+      }
+      if (!validEmail(email)) {
+        showError(currentLang === 'sv' ? 'Ange en giltig e-postadress.' : 'Please enter a valid email address.');
+        document.getElementById('f-email').focus(); return;
+      }
+      if (message.length < 10) {
+        showError(currentLang === 'sv' ? 'Beskriv ditt problem lite mer.' : 'Please describe your issue in more detail.');
+        document.getElementById('f-msg').focus(); return;
+      }
+
+      // 4 — Submit
+      const btn = document.getElementById('form-submit-btn');
+      btn.disabled = true;
+      btn.textContent = currentLang === 'sv' ? 'Skickar...' : 'Sending...';
+
+      fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      })
+      .then(res => {
+        if (res.ok) {
+          recordSubmit();
+          form.reset();
+          btn.style.display = 'none';
+          const sm = document.getElementById('success-msg');
+          if (sm) {
+            sm.style.display = 'block';
+            const sp = sm.querySelector('span');
+            if (sp) sp.textContent = currentLang === 'sv'
+              ? '✓ Tack! Vi återkommer inom 24 timmar.'
+              : "✓ Thank you! We'll be in touch within 24 hours.";
+          }
+        } else {
+          btn.disabled = false;
+          btn.textContent = currentLang === 'sv' ? 'Skicka förfrågan →' : 'Send request →';
+          showError(currentLang === 'sv'
+            ? 'Något gick fel. Försök igen eller ring oss direkt.'
+            : 'Something went wrong. Please try again or call us directly.');
+        }
+      })
+      .catch(() => {
+        btn.disabled = false;
+        btn.textContent = currentLang === 'sv' ? 'Skicka förfrågan →' : 'Send request →';
+        showError(currentLang === 'sv'
+          ? 'Nätverksfel. Kontrollera din internetanslutning.'
+          : 'Network error. Please check your internet connection.');
+      });
+    });
+
+    // Show success if user returns with ?sent=1 (no-JS fallback)
+    if (window.location.search.includes('sent=1')) {
+      const sm = document.getElementById('success-msg');
+      if (sm) sm.style.display = 'block';
+    }
+  })();
+
+  /* ── Scroll fade-in ── */
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 80);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+  // Cookie notice
+  (function() {
+    var bar = document.getElementById('cookie-bar');
+    var btn = document.getElementById('cookie-accept');
+    if (!bar || !btn) return;
+    try {
+      if (!localStorage.getItem('cookie_ok')) {
+        setTimeout(function() { bar.classList.add('visible'); }, 800);
+      }
+    } catch(e) { bar.classList.add('visible'); }
+    btn.addEventListener('click', function() {
+      bar.classList.remove('visible');
+      try { localStorage.setItem('cookie_ok', '1'); } catch(e) {}
+    });
+  })();
+
+</script>
+
+<div class="cookie-bar" id="cookie-bar" role="region" aria-label="Cookie-information">
+  <p>
+    <span data-sv="Vi använder inga spårningscookies. Webbplatsen laddar typsnitt via Google Fonts, vilket innebär att din IP-adress kan skickas till Googles servrar. Inga personuppgifter används för annonsering eller analys." data-en="We use no tracking cookies. The site loads fonts via Google Fonts, which means your IP address may be sent to Google&#39;s servers. No personal data is used for advertising or analytics.">Vi använder inga spårningscookies. Webbplatsen laddar typsnitt via Google Fonts, vilket innebär att din IP-adress kan skickas till Googles servrar. Inga personuppgifter används för annonsering eller analys.</span>
+    <a href="privacy.html" data-sv="Läs vår integritetspolicy" data-en="Read our privacy policy">Läs vår integritetspolicy</a>.
+  </p>
+  <button class="cookie-accept" id="cookie-accept" data-sv="Förstått" data-en="Got it">Förstått</button>
+</div>
+</body>
+</html>

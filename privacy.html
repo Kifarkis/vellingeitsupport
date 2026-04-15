@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="sv" id="html-root">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Integritetspolicy — Vellinge IT Support</title>
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; frame-ancestors 'none'; object-src 'none'; base-uri 'self';">
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+<meta http-equiv="X-Frame-Options" content="DENY">
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Figtree:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root { --bg:#0d1f3c; --teal:#2e7dd1; --teal-light:#5ba3e8; --accent:#e8a020; --accent-light:#f5c06a; --accent-l:#f5c06a; --navy:#0d1f3c; --text:#1a2b42; --muted:#6b7f9a; --border:#d8e3f0; --light:#f4f7fc; }
+  *, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
+  html { scroll-behavior:smooth; }
+  body { padding-top: 68px; padding-bottom: 72px; font-family:'Figtree', sans-serif; color:var(--text); background:var(--light); line-height:1.7; }
+
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(13,31,60,0.97); backdrop-filter: blur(14px); padding: 0 5vw; display: flex; align-items: center; justify-content: space-between; height: 68px; border-bottom: 1px solid rgba(232,160,32,0.1); }
+  .nav-brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+  .nav-brand-icon { width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; }
+  .nav-brand-name { font-family:'DM Serif Display', Georgia, serif; color:white; font-size:1.1rem; font-weight:400; }
+  .nav-brand-text { font-family: 'DM Serif Display', serif; color: white; font-size: 1.15rem; font-weight: 400; }
+  .nav-brand-text span { color: var(--accent-light); font-style: italic; }
+  .nav-actions { display:flex; align-items:center; gap:12px; }
+  .lang-toggle { display:flex; background:rgba(255,255,255,0.08); border-radius:20px; padding:3px; gap:2px; }
+  .lang-btn { background: none; border: none; cursor: pointer; color: rgba(255,255,255,0.5); font-family: 'Figtree', sans-serif; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.05em; padding: 4px 12px; border-radius: 16px; transition: all 0.2s; }
+  .lang-btn.active { background: var(--accent); color: var(--navy); }
+  .nav-cta { background: var(--accent); color: var(--navy); font-family: 'Figtree', sans-serif; font-weight: 600; font-size: 0.85rem; padding: 9px 20px; border-radius: 6px; text-decoration: none; border: none; cursor: pointer; transition: all 0.2s; white-space: nowrap; }
+  .nav-cta:hover { opacity: 0.85; }
+  .nav-back { font-family:'Figtree', sans-serif; color:rgba(255,255,255,0.55); font-size:0.82rem; text-decoration:none; border:1px solid rgba(255,255,255,0.15); padding:6px 14px; border-radius:5px; transition:all 0.2s; }
+  .nav-back:hover { color:white; border-color:rgba(255,255,255,0.35); }
+
+  .hero { background:var(--bg); padding:52px 5vw 48px; border-bottom:1px solid rgba(255,255,255,0.06); }
+  .hero-tag { font-size:0.7rem; font-weight:600; letter-spacing:0.14em; color:var(--accent-l); text-transform:uppercase; margin-bottom:12px; display:flex; align-items:center; gap:8px; }
+  .hero-tag::before { content:''; width:18px; height:1.5px; background:var(--accent); }
+  .hero h1 { font-family:'DM Serif Display', Georgia, serif; font-size:clamp(2rem,4vw,3rem); color:white; font-weight:400; margin-bottom:12px; }
+  .hero p { color:rgba(255,255,255,0.45); font-size:0.88rem; font-weight:300; }
+
+  .page { max-width:780px; margin:0 auto; padding:56px 5vw 88px; }
+  .section { margin-bottom:44px; }
+  .section h2 { font-family:'DM Serif Display', Georgia, serif; font-size:1.35rem; color:var(--text); margin-bottom:14px; font-weight:400; padding-bottom:10px; border-bottom:1px solid var(--border); }
+  .section p { font-size:0.92rem; color:var(--muted); line-height:1.82; margin-bottom:12px; font-weight:300; }
+  .section p:last-child { margin-bottom:0; }
+  .section p strong { color:var(--text); font-weight:600; }
+  .section ul { list-style:none; display:flex; flex-direction:column; gap:8px; margin:12px 0; }
+  .section ul li { display:flex; align-items:flex-start; gap:10px; font-size:0.9rem; color:var(--muted); line-height:1.6; font-weight:300; }
+  .section ul li::before { content:'—'; color:var(--accent); flex-shrink:0; margin-top:1px; }
+  .highlight { background:white; border:1px solid var(--border); border-left:3px solid var(--accent); border-radius:0 8px 8px 0; padding:18px 22px; margin:16px 0; }
+  .highlight p { font-size:0.88rem; }
+  .contact-box { background:var(--bg); border-radius:10px; padding:24px 28px; margin-top:20px; }
+  .contact-box p { color: rgba(255,255,255,0.72) !important; font-size:0.88rem; margin-bottom:6px; }
+  .contact-box p:last-child { margin-bottom:0; }
+    .contact-box strong { color: rgba(255,255,255,0.72) !important; }
+  .contact-box a { color:var(--accent-l); text-decoration:none; }
+  .contact-box a:hover { text-decoration:underline; }
+  .updated { font-size:0.78rem; color:var(--muted); margin-top:48px; padding-top:20px; border-top:1px solid var(--border); }
+
+  footer { position: fixed; bottom: 0; left: 0; right: 0; z-index: 100; background: #060f1e; padding: 18px 5vw; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; border-top: 1px solid rgba(232,160,32,0.1); }
+  .footer-brand { display:flex; align-items:center; gap:10px; text-decoration:none; }
+  .footer-brand-text { font-family: 'DM Serif Display', serif; color: rgba(255,255,255,0.42); font-size: 1rem; }
+  .footer-brand-text b { color:white; }
+  .footer-copy { color:rgba(255,255,255,0.22); font-size:0.75rem; }
+  footer a { color:rgba(255,255,255,0.4); text-decoration:none; font-size:0.75rem; }
+  footer a:hover { color:rgba(255,255,255,0.7); }
+</style>
+</head>
+<body>
+<!-- ═══ VELLINGE MARK — single definition ═══ -->
+<svg style="display:none" xmlns="http://www.w3.org/2000/svg">
+  <symbol id="vellinge-mark" viewBox="0 0 36 36">
+
+        <defs>
+          <linearGradient id="vellinge_mark_g0" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#2e7dd1"/>
+            <stop offset="100%" stop-color="#e8a020"/>
+          </linearGradient>
+        </defs>
+        <!-- Shield shape -->
+        <path d="M18 2 L32 8 L32 20 Q32 30 18 34 Q4 30 4 20 L4 8 Z" fill="#0d1f3c" stroke="url(#vellinge_mark_g0)" stroke-width="1.2"/>
+        <!-- V letterform -->
+        <path d="M10 11 L18 26 L26 11" fill="none" stroke="url(#vellinge_mark_g0)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+        <!-- Accent dot at V bottom -->
+        <circle cx="18" cy="26" r="1.8" fill="#e8a020" opacity="0.9"/>
+        </symbol>
+</svg>
+
+<nav>
+  <a href="index.html" class="nav-brand">
+        <div class="nav-brand-icon">
+      <svg width="36" height="36" aria-label="Vellinge IT logotyp">
+        <use href="#vellinge-mark"/>
+      </svg>
+    </div>
+    <span class="nav-brand-text">Vellinge <span>IT</span> Support</span>
+  </a>
+  <div class="nav-actions">
+    <div class="lang-toggle">
+      <button class="lang-btn active" onclick="setLang('sv')" id="btn-sv">SV</button>
+      <button class="lang-btn" onclick="setLang('en')" id="btn-en">EN</button>
+    </div>
+    <a href="index.html#contact" class="nav-cta" data-sv="Kontakta oss" data-en="Contact us">Kontakta oss</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="hero-tag" data-sv="Juridisk information" data-en="Legal information">Juridisk information</div>
+  <h1 data-sv="Integritetspolicy" data-en="Privacy Policy">Integritetspolicy</h1>
+  <p data-sv="Senast uppdaterad: 15 april 2026 &nbsp;·&nbsp; Gäller för Vellinge IT Support" data-en="Last updated: 15 April 2026 &nbsp;·&nbsp; Applies to Vellinge IT Support">Senast uppdaterad: 15 april 2026 &nbsp;·&nbsp; Gäller för Vellinge IT Support</p>
+</div>
+
+<div class="page">
+
+  <div class="section">
+    <h2 data-sv="1. Personuppgiftsansvarig" data-en="1. Data Controller">1. Personuppgiftsansvarig</h2>
+    <p data-sv="&lt;strong&gt;Vellinge IT Support&lt;/strong&gt; är personuppgiftsansvarig för den behandling av personuppgifter som beskrivs i denna policy. Vi är verksamma inom Vellingeområdet och erbjuder lokal IT-support till privatpersoner och mindre företag." data-en="&lt;strong&gt;Vellinge IT Support&lt;/strong&gt; is the data controller for the processing of personal data described in this policy. We operate within the Vellingeområdet_EN and provide local IT support to individuals and small businesses."><strong>Vellinge IT Support</strong> är personuppgiftsansvarig för den behandling av personuppgifter som beskrivs i denna policy. Vi är verksamma inom Vellingeområdet och erbjuder lokal IT-support till privatpersoner och mindre företag.</p>
+    <div class="contact-box">
+      <p><strong data-sv="Kontakt för dataskyddsfrågor" data-en="Data protection contact">Kontakt för dataskyddsfrågor</strong></p>
+      <p data-sv="E-post: &lt;a href='mailto:info@vellingeit.se'&gt;info@vellingeit.se&lt;/a&gt;" data-en="Email: &lt;a href='mailto:info@vellingeit.se'&gt;info@vellingeit.se&lt;/a&gt;">E-post: <a href="mailto:info@vellingeit.se">info@vellingeit.se</a></p>
+      <p data-sv="Telefon: 040 000 00 00" data-en="Phone: 040 000 00 00">Telefon: 040 000 00 00</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2 data-sv="2. Vilka uppgifter samlar vi in?" data-en="2. What data do we collect?">2. Vilka uppgifter samlar vi in?</h2>
+    <p data-sv="Vi samlar endast in uppgifter som du aktivt lämnar till oss via kontaktformuläret. Det kan röra sig om:" data-en="We only collect data you actively provide through the contact form. This may include:">Vi samlar endast in uppgifter som du aktivt lämnar till oss via kontaktformuläret. Det kan röra sig om:</p>
+    <ul>
+      <li data-sv="Namn" data-en="Name">Namn</li>
+      <li data-sv="E-postadress" data-en="Email address">E-postadress</li>
+      <li data-sv="Telefonnummer (frivilligt)" data-en="Phone number (optional)">Telefonnummer (frivilligt)</li>
+      <li data-sv="Beskrivning av ditt IT-problem eller din förfrågan" data-en="Description of your IT issue or request">Beskrivning av ditt IT-problem eller din förfrågan</li>
+      <li data-sv="Ärendekategori (t.ex. Dator &amp; Surfplatta eller WiFi &amp; Nätverk)" data-en="Issue category (e.g. Computer &amp; Tablet or WiFi &amp; Network)">Ärendekategori (t.ex. Dator &amp; Surfplatta eller WiFi &amp; Nätverk)</li>
+    </ul>
+    <p data-sv="Vi samlar &lt;strong&gt;inte&lt;/strong&gt; in uppgifter automatiskt via cookies, spårningspixlar eller analysverktyg. Webbplatsen använder inga reklamtjänster." data-en="We do &lt;strong&gt;not&lt;/strong&gt; automatically collect data via cookies, tracking pixels or analytics tools. The website uses no advertising services.">Vi samlar <strong>inte</strong> in uppgifter automatiskt via cookies, spårningspixlar eller analysverktyg. Webbplatsen använder inga reklamtjänster.</p>
+  </div>
+
+  <div class="section">
+    <h2 data-sv="3. Varför behandlar vi dina uppgifter?" data-en="3. Why do we process your data?">3. Varför behandlar vi dina uppgifter?</h2>
+    <p data-sv="Uppgifterna du lämnar i kontaktformuläret används uteslutande för att:" data-en="The data you provide is used solely to:">Uppgifterna du lämnar i kontaktformuläret används uteslutande för att:</p>
+    <ul>
+      <li data-sv="Besvara din förfrågan och ge dig ett prisförslag" data-en="Respond to your enquiry and provide a quote">Besvara din förfrågan och ge dig ett prisförslag</li>
+      <li data-sv="Boka och koordinera ett supportuppdrag" data-en="Book and coordinate a support visit">Boka och koordinera ett supportuppdrag</li>
+      <li data-sv="Följa upp utfört arbete" data-en="Follow up after completed work">Följa upp utfört arbete</li>
+    </ul>
+    <p data-sv="Den rättsliga grunden är &lt;strong&gt;berättigat intresse&lt;/strong&gt; (art. 6.1 f GDPR) — att besvara din servicebegäran — samt &lt;strong&gt;fullgörande av avtal&lt;/strong&gt; (art. 6.1 b GDPR)." data-en="The legal basis is &lt;strong&gt;legitimate interest&lt;/strong&gt; (Art. 6.1 f GDPR) — responding to your service request — and &lt;strong&gt;performance of a contract&lt;/strong&gt; (Art. 6.1 b GDPR).">Den rättsliga grunden är <strong>berättigat intresse</strong> (art. 6.1 f GDPR) — att besvara din servicebegäran — samt <strong>fullgörande av avtal</strong> (art. 6.1 b GDPR).</p>
+  </div>
+
+  <div class="section">
+    <h2 data-sv="4. Formulärtjänst — Formspree" data-en="4. Form service — Formspree">4. Formulärtjänst — Formspree</h2>
+    <p data-sv="Kontaktformuläret skickar ditt meddelande via &lt;strong&gt;Formspree&lt;/strong&gt; (formspree.io), som vidarebefordrar formulärdata till vår e-postinkorg. Formspree agerar som personuppgiftsbiträde i enlighet med GDPR." data-en="The contact form sends your message via &lt;strong&gt;Formspree&lt;/strong&gt; (formspree.io), which forwards form data to our email inbox. Formspree acts as a data processor in accordance with GDPR.">Kontaktformuläret skickar ditt meddelande via <strong>Formspree</strong> (formspree.io), som vidarebefordrar formulärdata till vår e-postinkorg. Formspree agerar som personuppgiftsbiträde i enlighet med GDPR.</p>
+    <div class="highlight">
+      <p data-sv="Dina uppgifter lagras temporärt hos Formspree under vidarebefordringen och raderas därefter. Läs deras integritetspolicy på formspree.io/privacy." data-en="Your data is stored temporarily with Formspree during forwarding and then deleted. Read their privacy policy at formspree.io/privacy.">Dina uppgifter lagras temporärt hos Formspree under vidarebefordringen och raderas därefter. Läs deras integritetspolicy på formspree.io/privacy.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2 data-sv="5. Lagring och radering" data-en="5. Retention and deletion">5. Lagring och radering</h2>
+    <p data-sv="Vi sparar dina kontaktuppgifter i vår e-postinkorg under den tid som krävs för att hantera ärendet — normalt &lt;strong&gt;högst 12 månader&lt;/strong&gt; efter avslutat uppdrag, om inte längre lagringstid krävs av bokförings- eller skatterättsliga skäl. Vi delar aldrig dina uppgifter med tredje part i marknadsföringssyfte." data-en="We retain your contact details for as long as needed to manage the case — normally &lt;strong&gt;no more than 12 months&lt;/strong&gt; after the completed job, unless a longer period is required by accounting or tax law. We never share your data with third parties for marketing.">Vi sparar dina kontaktuppgifter i vår e-postinkorg under den tid som krävs för att hantera ärendet — normalt <strong>högst 12 månader</strong> efter avslutat uppdrag, om inte längre lagringstid krävs av bokförings- eller skatterättsliga skäl. Vi delar aldrig dina uppgifter med tredje part i marknadsföringssyfte.</p>
+  </div>
+
+  <div class="section">
+    <h2 data-sv="6. Google Fonts" data-en="6. Google Fonts">6. Google Fonts</h2>
+    <p data-sv="Webbplatsen laddar typsnitt från &lt;strong&gt;Google Fonts&lt;/strong&gt; (fonts.googleapis.com). Vid sidladdning upprättas en anslutning till Googles servrar, vilket innebär att din IP-adress kan loggas av Google. Vi använder inga Google-tjänster i spårnings- eller analyssyfte." data-en="This website loads fonts from &lt;strong&gt;Google Fonts&lt;/strong&gt; (fonts.googleapis.com). When the page loads, a connection is made to Google's servers, meaning your IP address may be logged by Google. We use no Google services for tracking or analytics.">Webbplatsen laddar typsnitt från <strong>Google Fonts</strong> (fonts.googleapis.com). Vid sidladdning upprättas en anslutning till Googles servrar, vilket innebär att din IP-adress kan loggas av Google. Vi använder inga Google-tjänster i spårnings- eller analyssyfte.</p>
+  </div>
+
+  <div class="section">
+    <h2 data-sv="7. Cookies" data-en="7. Cookies">7. Cookies</h2>
+    <p data-sv="Denna webbplats använder &lt;strong&gt;inga spårningscookies, analyticscookies eller reklamcookies&lt;/strong&gt;. Den enda tekniska cookie som kan sättas är en sessionscookie för formulärskyddet, vilken raderas när du stänger webbläsaren. Inga uppgifter används för spårning eller profilering." data-en="This website uses &lt;strong&gt;no tracking cookies, analytics cookies or advertising cookies&lt;/strong&gt;. The only technical cookie that may be set is a session cookie for form protection, which is deleted when you close your browser. No data is used for tracking or profiling.">Denna webbplats använder <strong>inga spårningscookies, analyticscookies eller reklamcookies</strong>. Den enda tekniska cookie som kan sättas är en sessionscookie för formulärskyddet, vilken raderas när du stänger webbläsaren. Inga uppgifter används för spårning eller profilering.</p>
+  </div>
+
+  <div class="section">
+    <h2 data-sv="8. Dina rättigheter" data-en="8. Your rights">8. Dina rättigheter</h2>
+    <p data-sv="Enligt GDPR har du rätt att:" data-en="Under GDPR you have the right to:">Enligt GDPR har du rätt att:</p>
+    <ul>
+      <li data-sv="&lt;strong&gt;Begära tillgång&lt;/strong&gt; — ta del av vilka uppgifter vi behandlar om dig" data-en="&lt;strong&gt;Request access&lt;/strong&gt; — obtain information about what data we hold about you"><strong>Begära tillgång</strong> — ta del av vilka uppgifter vi behandlar om dig</li>
+      <li data-sv="&lt;strong&gt;Begära rättelse&lt;/strong&gt; — korrigera felaktiga uppgifter" data-en="&lt;strong&gt;Request rectification&lt;/strong&gt; — correct inaccurate data"><strong>Begära rättelse</strong> — korrigera felaktiga uppgifter</li>
+      <li data-sv="&lt;strong&gt;Begära radering&lt;/strong&gt; — rätten att bli glömd, under förutsättning att inga legala krav på lagring föreligger" data-en="&lt;strong&gt;Request erasure&lt;/strong&gt; — the right to be forgotten, where no legal retention requirements apply"><strong>Begära radering</strong> — rätten att bli glömd, under förutsättning att inga legala krav på lagring föreligger</li>
+      <li data-sv="&lt;strong&gt;Begära begränsning&lt;/strong&gt; — begränsa hur vi använder dina uppgifter" data-en="&lt;strong&gt;Request restriction&lt;/strong&gt; — limit how we use your data"><strong>Begära begränsning</strong> — begränsa hur vi använder dina uppgifter</li>
+      <li data-sv="&lt;strong&gt;Invända mot behandling&lt;/strong&gt; — särskilt vid behandling baserad på berättigat intresse" data-en="&lt;strong&gt;Object to processing&lt;/strong&gt; — particularly where based on legitimate interest"><strong>Invända mot behandling</strong> — särskilt vid behandling baserad på berättigat intresse</li>
+      <li data-sv="&lt;strong&gt;Dataportabilitet&lt;/strong&gt; — få ut dina uppgifter i ett maskinläsbart format" data-en="&lt;strong&gt;Data portability&lt;/strong&gt; — receive your data in a machine-readable format"><strong>Dataportabilitet</strong> — få ut dina uppgifter i ett maskinläsbart format</li>
+    </ul>
+    <p data-sv="Kontakta oss via e-post för att utöva någon av dessa rättigheter. Vi svarar inom 30 dagar." data-en="Contact us by email to exercise any of these rights. We will respond within 30 days.">Kontakta oss via e-post för att utöva någon av dessa rättigheter. Vi svarar inom 30 dagar.</p>
+  </div>
+
+  <div class="section">
+    <h2 data-sv="9. Klagomål" data-en="9. Complaints">9. Klagomål</h2>
+    <p data-sv="Om du anser att vi behandlar dina uppgifter i strid med GDPR har du rätt att klaga till &lt;strong&gt;Integritetsskyddsmyndigheten (IMY)&lt;/strong&gt;:" data-en="If you believe we are processing your data in breach of GDPR you have the right to complain to the &lt;strong&gt;Swedish Authority for Privacy Protection (IMY)&lt;/strong&gt;:">Om du anser att vi behandlar dina uppgifter i strid med GDPR har du rätt att klaga till <strong>Integritetsskyddsmyndigheten (IMY)</strong>:</p>
+    <ul>
+      <li data-sv="Webbplats: imy.se" data-en="Website: imy.se">Webbplats: imy.se</li>
+      <li data-sv="E-post: imy@imy.se" data-en="Email: imy@imy.se">E-post: imy@imy.se</li>
+      <li data-sv="Telefon: 08-657 61 00" data-en="Phone: 08-657 61 00">Telefon: 08-657 61 00</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2 data-sv="10. Ändringar" data-en="10. Changes">10. Ändringar</h2>
+    <p data-sv="Vi kan komma att uppdatera denna policy vid behov. Den aktuella versionen publiceras alltid på denna sida med datum för senaste uppdatering." data-en="We may update this policy as needed. The current version is always published on this page with the date of the latest update.">Vi kan komma att uppdatera denna policy vid behov. Den aktuella versionen publiceras alltid på denna sida med datum för senaste uppdatering.</p>
+  </div>
+
+  <p class="updated" data-sv="Version 1.0 · 15 April 2026 · Vellinge IT Support" data-en="Version 1.0 · 15 April 2026 · Vellinge IT Support">Version 1.0 · 15 April 2026 · Vellinge IT Support</p>
+
+</div>
+
+<footer>
+  <div class="footer-brand">
+        <svg width="28" height="28" aria-label="Vellinge IT logotyp">
+      <use href="#vellinge-mark"/>
+    </svg>
+    <span class="footer-brand-text"><b>Vellinge IT</b> Support</span>
+  </div>
+
+  <span class="footer-copy" data-sv="© 2026 Vellinge IT Support. Alla rättigheter förbehållna." data-en="© 2026 Vellinge IT Support. All rights reserved.">© 2026 Vellinge IT Support. Alla rättigheter förbehållna.</span>
+  <a href="index.html" data-sv="Tillbaka till startsidan" data-en="Back to home">Tillbaka till startsidan</a>
+</footer>
+
+<script>
+  var currentLang = 'sv';
+  try { currentLang = localStorage.getItem('lang') || 'sv'; } catch(e) {}
+
+  function setLang(lang) {
+    currentLang = lang;
+    document.documentElement.lang = lang;
+    var els = document.querySelectorAll('[data-sv][data-en]');
+    for (var i = 0; i < els.length; i++) {
+      var el  = els[i];
+      var val = el.getAttribute('data-' + lang);
+      if (!val) continue;
+      if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+        el.placeholder = val;
+      } else {
+        el.innerHTML = val;
+      }
+    }
+    var bsv = document.getElementById('btn-sv');
+    var ben = document.getElementById('btn-en');
+    if (bsv) { bsv.classList.toggle('active', lang === 'sv'); }
+    if (ben) { ben.classList.toggle('active', lang === 'en'); }
+    try { localStorage.setItem('lang', lang); } catch(e) {}
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', function() { setLang(currentLang); });
+  } else {
+    setLang(currentLang);
+  }
+</script>
+</body>
+</html>
