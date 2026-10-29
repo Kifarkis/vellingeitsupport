@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+Disallow: /admin/
+Disallow: /private/
+Disallow: /.env
+Disallow: /.git/
+
+Sitemap: https://www.vellingeit.se/sitemap.xml
